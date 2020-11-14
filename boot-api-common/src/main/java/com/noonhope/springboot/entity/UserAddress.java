@@ -2,6 +2,8 @@ package com.noonhope.springboot.entity;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 /**
  * @author onlystatic
  * @date 2020-11-14 01:33 PM
@@ -10,7 +12,7 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserAddress {
+public class UserAddress implements Serializable {
 
     private Integer id;
 

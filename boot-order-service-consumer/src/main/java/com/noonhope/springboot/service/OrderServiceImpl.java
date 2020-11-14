@@ -1,7 +1,7 @@
 package com.noonhope.springboot.service;
 
 import com.noonhope.springboot.entity.UserAddress;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements IOrderService {
 
-    @Autowired
+    @DubboReference
     private IUserService userService;
 
     @Override

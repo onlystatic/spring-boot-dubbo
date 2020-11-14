@@ -1,0 +1,10 @@
+dubbo:
+  application:
+    name: order-service-consumer
+  registry:
+    address: localhost:2181
+    protocol: zookeeper
+  monitor:
+    protocol: registry
+server:
+  port: 8083
