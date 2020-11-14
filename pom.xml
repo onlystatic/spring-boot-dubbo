@@ -9,7 +9,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>boot-common-api</module>
+        <module>boot-api-common</module>
+        <module>boot-user-service-provider</module>
     </modules>
     <!--统一管理jar包版本-->
     <properties>
