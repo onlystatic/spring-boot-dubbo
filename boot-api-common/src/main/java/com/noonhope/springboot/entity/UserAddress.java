@@ -1,22 +1,23 @@
-package entity;
+package com.noonhope.springboot.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
+import lombok.*;
 
 /**
  * @author onlystatic
  * @date 2020-11-14 01:33 PM
  */
-@Data
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserAddress {
 
     private Integer id;
 
-    @JsonProperty("receiver_name")
     private String receiverName;
 
-    @JsonProperty("phone_number")
     private String phoneNumber;
 
     private String address;
+
 }
