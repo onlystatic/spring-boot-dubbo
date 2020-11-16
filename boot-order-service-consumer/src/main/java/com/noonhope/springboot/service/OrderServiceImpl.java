@@ -1,5 +1,7 @@
 package com.noonhope.springboot.service;
 
+import com.google.common.collect.Lists;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.noonhope.springboot.entity.UserAddress;
 import java.util.List;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -19,10 +21,13 @@ public class OrderServiceImpl implements IOrderService {
     private IUserService userService;
 
     @Override
+    @HystrixCommand(fallbackMethod = "initOrderFallback")
     public List<UserAddress> initOrder(Integer userId) {
-
         System.out.println("用户id:" + userId);
-
         return userService.getUserAddressList(userId);
+    }
+
+    public List<UserAddress> initOrderFallback(Integer userId) {
+        return Lists.newArrayList(new UserAddress(1, "测试", "测试号码", "测试地址。"));
     }
 }
