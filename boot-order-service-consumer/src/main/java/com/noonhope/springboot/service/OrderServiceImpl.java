@@ -1,10 +1,9 @@
 package com.noonhope.springboot.service;
 
 import com.noonhope.springboot.entity.UserAddress;
+import java.util.List;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * @author onlystatic
@@ -13,7 +12,10 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements IOrderService {
 
-    @DubboReference
+    /**
+     * url可以写服务提供者地址，不通过注册中心，直连方式访问服务
+     */
+    @DubboReference()
     private IUserService userService;
 
     @Override
