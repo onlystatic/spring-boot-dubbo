@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020-11-14 04:37 PM
  */
 @SpringBootApplication
+//开启dubbo
 @EnableDubbo
 public class OrderServiceMain {
 
